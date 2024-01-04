@@ -1,0 +1,128 @@
+body {
+  background-color: #121212;
+  font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  font-size: 28px;
+  color: #eee;
+}
+
+.info {
+  text-decoration: none;
+}
+
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: 400px;
+  height: 400px;
+}
+
+small {
+  font-size: 12px;
+  color: #444;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.bingo-button {
+  background-color: #242424;
+  border-color: #242424;
+  border-radius: 4px;
+  border-style: solid;
+  font-size: 18pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  filter: grayscale(100%);
+  transition: all 150ms ease-in-out;
+}
+.bingo-button.done {
+  filter: none;
+  background-color: #555555;
+  border-color: #555555;
+}
+
+.bingo-button:hover {
+  background-color: #555555;
+  border-color: #555555;
+  filter: none;
+}
+.bingo-button.done:hover {
+  background-color: #424242;
+  border-color: #424242;
+}
+
+/* ------------- Card Modal CSS ------------- */
+/* Background blurring + card modal container */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/**
+ * Triggered when one of the bingo squares is clicked.
+ * This takes advantage of the :target pseudo-class that
+ * allows us to style elements based on the hash portion
+ * of the URL (eg. https://crump.space/bingo2024#modal1).
+ */
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+  backdrop-filter: blur(2px);
+}
+
+.card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  width: 70%;
+  max-width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-right: 32px;
+}
+.card .close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 24px;
+  text-decoration: none;
+  filter: grayscale(100%);
+  transition: all 200ms ease-in-out;
+}
+.card .close:hover {
+  filter: none;
+}
+.card .content {
+  overflow: auto;
+}
