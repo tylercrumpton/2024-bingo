@@ -2,6 +2,8 @@
 
 _A cute little HTML+CSS bingo board for things I think would be awesome to accomplish this year!_
 
+![Preview](preview.png)
+
 Check it out in action at [crump.space/2024-bingo](https://crump.space/2024-bingo)!
 
 **Instead of making a New Year's resolution**, I'm making a bingo card of things I want to do in **2024**. Some of these goals are lofty, some are silly or "trivial", and some just aren't fully in my control.
